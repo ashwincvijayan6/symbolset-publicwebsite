@@ -1,0 +1,172 @@
+ .navbar-brand{
+  margin: 3%;
+ }
+.btn:hover{
+  text-decoration: underline cadetblue;
+
+}
+ 
+ 
+ .container-blink .blink{
+    padding: 0;
+    margin-top:30px;
+    width:100vw;
+    height:400px;
+    max-width: 100vw;
+    margin-left: 0;
+    
+    /* margin-left: calc(100vw - 100px); */
+    /* object-fit: cover; */
+    /* border:1px solid black; */
+    animation: blink 15s infinite;
+  }
+  @keyframes blink{
+    0% {
+      background: rgb(147, 144, 144);
+    }
+    20% {
+      background: rgb(40, 235, 147);
+    }
+    40% {
+      background: yellow;
+    }
+    60% {
+      background: rgb(89, 144, 233);
+    }
+    80% {
+      background: rgba(255, 166, 0, 0.611);
+    }
+    100% {
+      background: rgb(150, 106, 240);
+    }
+  }
+  @-webkit-keyframes blink{
+    0% {
+      background: rgb(147, 144, 144);
+    }
+    20% {
+      background: rgb(40, 235, 147);
+    }
+    40% {
+      background: yellow;
+    }
+    60% {
+      background: rgb(89, 144, 233);
+    }
+    80% {
+      background: rgba(255, 166, 0, 0.611);
+    }
+    100% {
+      background: rgb(150, 106, 240);
+    }
+}
+
+
+.text-move {
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    color: #fff;
+    /* font-size: 100px; */
+}
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width:961px) {
+    .text-move{
+      font-size: 2.6em;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 960px) {
+    .text-move {
+      font-size: 1.6em;
+    }
+  }
+  #slider {
+    display: none;
+    position: relative;
+    top: 65%;
+    left:15%;
+    width: 17%;
+    height: .5%;
+    color: #808080;
+
+  }
+  /* #slider:hover{
+    display: block;
+    background: gray;
+  } */
+  /* .home-demo:hover .font-slider, .home-demo:hover label, .home-typer input:focus ~ .font-slider, .home-typer input:focus ~ label, .home-demo.active .font-slider, .home-demo.active label {
+    opacity: 1;
+    -webkit-transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -ms-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
+    transition: opacity 0.1s ease-out; */
+
+  .container-text{
+    text-align: left;
+    font-style: normal;
+    font-weight: 300;
+    color: #000;
+    font-size: 2.6em;
+    /* margin-top: 2em;
+    margin-left: 4em; */
+    margin: 5% 30%;
+  }
+
+  .container-h3-img{
+    margin-left: 27%;
+    
+  }
+
+  .container-h3-p {
+    text-align: justify;
+    
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .container-text{
+      margin: 15% 6%;
+      padding: 0;
+      font-size: 36px;
+      line-height: 1.25;
+      box-sizing: border-box;
+    }
+
+    .container-h3-img{
+      width: 35px;
+      position: absolute;
+      margin-left: -71px;
+    }
+    
+    .container-h3-txt{
+      position: relative;
+      margin-left: -112px;
+    }
+
+    .container-h3-p{
+      text-align: justify;
+      margin-left: -160px;
+      margin-top: 15px;
+    }
+
+}
+
+.bg-light{
+  margin-top: 5%;
+
+}
+.bg-light:hover img{
+ opacity: 100%;
+}
+
+
+.img-responsive{
+  opacity: 20%;
+  max-width: 70%;
+  margin-left: 12%;
+
+  
+} 

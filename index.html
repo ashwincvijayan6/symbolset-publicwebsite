@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symbolset</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand fs-1 ">Symbolset</a>
+            <form class="" role="search">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <button class="btn fs-3" type="submit">Icon</button>
+              <button class="btn fs-3" type="submit">Sign in</button>
+              <a href="#"> <img src="images/question-mark-outline-svgrepo-com.svg" class="icon"></a>
+            </form>
+          </div>
+        </nav>
+
+
+      </div>
+
+    </div>
+    <section class="container-blink ">
+      <div>
+        <div class="blink">
+
+          <h1 class="demo mb-4 title text-move"> <span class="typed-text"></span><span class="cursor">&nbsp</span></h1>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <input type="range" min="1.2" max="2.6" step=".2" id="slider" />
+
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <!-- content -->
+
+    <section>
+      <div class="container-home">
+        <h1 class="container-text">Symbolset makes icons meaningful,<br> easy, and accessible.</h1>
+      </div>
+
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-sm-6 ">
+            <div class="row row-cols-2">
+              <div class="col">
+                <img class="container-h3-img " src="images/icon-1.svg">
+
+              </div>
+              
+              <div class="col text-start  ">
+                <h3 class="container-h3-txt fs-5">Semantic</h3>
+                <p class="container-h3-p fs-5 text-wrap ">Call symbols with Unicode® values. Symbolsets are semantically mapped
+                  with the Unicode Standard.</p><br><br><br>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ">
+            <div class="row row-cols-2">
+              <div class="col">
+                <img class="container-h3-img fs-5 text-wrap" src="images/icon-2.svg">
+
+              </div>
+              <div class="col text-start  ">
+                <h3 class="container-h3-txt fs-5"">Accessible</h3>
+                <p class="container-h3-p fs-5 text-wrap">Call symbols with common terms. Screen readers and search engines see words. Users see symbols.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6  ">
+            <div class="row row-cols-2">
+              <div class="col">
+                <img class="container-h3-img lh-2" src="images/icon-3.svg">
+
+              </div>
+              <div class="col text-start  ">
+                <h3 class="container-h3-txt fs-5">Scalable</h3>
+                <p class="container-h3-p fs-5 text-wrap">Icons are scalable and retina-ready. Look great on screens of any resolution!</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="row row-cols-2">
+              <div class="col">
+                <img class="container-h3-img lh-2" src="images/icon-4.svg">
+
+              </div>
+              <div class="col text-start  ">
+                <h3 class="container-h3-txt fs-5">lightweight</h3>
+                <p class="container-h3-p fs-5 text-wrap">Get access to an entire set with just one HTTP request.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section>
+
+
+
+
+      <div class="container-fluid bg-light py-5">
+        <div class="footer-now ">
+          <img class="img-responsive img-center"  src="images/footer.png" style="width:100%;">
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- /typing-text-->
+    <script>
+      const typedTextSpan = document.querySelector(".typed-text");
+      const cursorSpan = document.querySelector(".cursor");
+
+      const textArray = ["Symbolset loves you", "made for the world"];
+      const typingDelay = 200;
+      const erasingDelay = 10;
+      const newTextDelay = 100; // Delay between current and next text
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+          typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          // add class 'typing' if there's none
+          if (!cursorSpan.classList.contains("typing")) {
+            cursorSpan.classList.add("typing");
+          }
+          typedTextSpan.textContent = textArray[textArrayIndex].substring(0, 0);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+      $('input').on('input', function () {
+        var v = $(this).val();
+        $('h1.demo').css('font-size', v + 'em')
+      });
+
+      $(document).ready(function () {
+        $(".container-blink").hover(function () {
+          $(this).find("#slider").css("display", "block")
+        }).mouseout(function () {
+          $(this).find("#slider").css("display", "none");
+        });
+        $(".blink").hover(function () {
+          $(this).find("#slider").css("display", "block")
+        }).mouseout(function () {
+          $(this).find("#slider").css("display", "none");
+        });
+        $("#slider").hover(function () {
+          $(this).css("display", "block")
+        }).mouseout(function () {
+          $(this).css("display", "none");
+        });
+
+      });
+
+    </script>
+    <!-- //typig-text-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
